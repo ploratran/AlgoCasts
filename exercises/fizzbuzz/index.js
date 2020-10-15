@@ -14,6 +14,17 @@
 
 function fizzBuzz(n) {
     for (let i = 1; i <= n; i++) {
+        let result = '';
+        if (i % 3 === 0) { result += 'fizz' }
+        if (i % 5 === 0) { result += 'buzz' }
+        console.log(result || i);
+    }
+}
+
+module.exports = fizzBuzz;
+
+/**
+ *  for (let i = 1; i <= n; i++) {
         // multiple of 3 and 5: 
         if (i % 15 === 0) {
             console.log('fizzbuzz');
@@ -22,13 +33,11 @@ function fizzBuzz(n) {
         else if (i % 3 === 0) {
             console.log('fizz');
         } 
-        // multiple of 5: 
+        // multiple of 5:
         else if (i % 5 === 0) {
             console.log('buzz');
         } else {
             console.log(i);
         }
     }
-}
-
-module.exports = fizzBuzz;
+*/
