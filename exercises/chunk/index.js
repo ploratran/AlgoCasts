@@ -9,8 +9,19 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-    let chunked = [];
+    const chunked = [];
+    let index = 0; 
 
+    while (index < array.length) {
+        chunked.push(array.slice(index, index + size));
+        index += size; 
+    }
+    
+    return chunked; 
+}
+
+module.exports = chunk;
+/*
     // loop thru array
     // iterate over each element in array
     // check if last element of chunked does not exist
@@ -25,8 +36,4 @@ function chunk(array, size) {
             last.push(el);
         }
     }
-
-    return chunked; 
-}
-
-module.exports = chunk;
+*/
