@@ -8,6 +8,44 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+    	// take only word characters without special characters and/or empty spaces
+  const strA = stringA.replace(/[^\w]/g, "").toLowerCase();
+  const strB = stringB.replace(/[^\w]/g, "").toLowerCase(); 
+  /* console.log('strA:', strA, ' and strB:', strB); */
+  
+  const charsA = {}, charsB = {};
+  
+  for (let char of strA) {
+    if (!charsA[char]) {
+    	charsA[char] = 1;
+    } else {
+    	charsA[char] += 1;
+    }
+  }
+  for (let char of strB) {
+  	if (!charsB[char]) {
+    	charsB[char] = 1;
+    } else {
+    	charsB[char] += 1;
+    }
+  }
+  
+  // if the objects are not having the same length
+  // return false
+  if (Object.keys(charsA).length !== Object.keys(charsB).length) {
+  	return false;
+  } 
+  
+  // if the objects have same length, not meaning they are anagrams
+  // loop thru 1 object, compare each character between objects
+  for (let char in charsA) {
+  	if (charsA[char] !== charsB[char]) {
+    	return false;
+    }
+  }
+  
+  return true; 
+}
 
 module.exports = anagrams;
