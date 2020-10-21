@@ -25,3 +25,18 @@ function reverseInt(n) {
 }
 
 module.exports = reverseInt;
+
+/**
+ *  let numToString, reversed, negative;
+	if (Math.sign(n) === -1) {
+        numToString = n.toString().slice(1);
+        negative = '-' + numToString.split('').reverse().join('');
+        reversed = parseInt(negative);
+    } else if (Math.sign(n) === 1) {
+        numToString = n.toString();
+        reversed = parseInt(numToString.split('').reverse().join(''));
+    } else if (n === 0) {
+        reversed = 0;
+    }
+    return reversed;
+ */
